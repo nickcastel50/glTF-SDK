@@ -66,6 +66,11 @@ namespace Microsoft
                 WriteExternal(uri, data.data(), data.size() * sizeof(T));
             }
 
+            std::shared_ptr<std::ostream> GetOutputBuffer(const std::string& uri)
+            {
+                return  m_streamWriterCache->Get(uri);
+            }
+
         protected:
             ResourceWriter(std::unique_ptr<IStreamWriterCache> streamWriter);
 
