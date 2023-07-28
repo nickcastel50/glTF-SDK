@@ -29,6 +29,7 @@ endif()
 
 target_link_libraries(Serialize
     GLTFSDK
+    stdc++fs
 )
 
 CreateGLTFInstallTargets(Serialize ${Platform})
